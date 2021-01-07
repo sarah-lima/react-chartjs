@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Style';
-import {HiMenu} from 'react-icons/hi';
+import {GiHamburgerMenu} from 'react-icons/gi';
 import {GrClose} from 'react-icons/gr';
 
 export default function Menu(){
@@ -9,6 +9,7 @@ export default function Menu(){
 
     return(
         <>
+        <S.Title>Titulo</S.Title>
         {
                     navOpen ?
                         <>
@@ -25,7 +26,7 @@ export default function Menu(){
                         :
                         <S.Div>
                         <S.Nav>
-                            <HiMenu size={26} onClick={()=>setnavOpen(!navOpen)} />
+                            <GiHamburgerMenu size={26} onClick={()=>setnavOpen(!navOpen)} />
                         </S.Nav>
              </S.Div>
                 }
