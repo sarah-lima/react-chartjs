@@ -6,7 +6,9 @@ export default function Home() {
     return(
         <>
         <Menu />
-        <S.Div>Olá Mundo</S.Div>
+        <S.Div>
+            <input type="file" style={{width:'30%', height:'20vh', borderRadius:'3%', borderColor:'#666'}}/>
+        </S.Div>
         </>
     )
 }

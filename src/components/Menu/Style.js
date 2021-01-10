@@ -9,10 +9,11 @@ export const Container= styled.div`
 
 export const Div= styled.div`
     margin:10px;
-    width:20%;
-    height:100vh;
+    width:auto;
+    height:100%;
     margin-left:20px;
-    
+    display: inline-flex;
+
 `
 export const Title= styled.h1`
     float: right;
@@ -24,9 +25,9 @@ export const Title= styled.h1`
 `
 export const Nav= styled.ul`
     width:100%;
-    display:block;
+    display:inline-block;
     margin-left: 4%;
-    margin-top:5%;
+    margin-top: -5px; 
     @media(max-width:480px){
         margin-left: 10%;        
         display: block;
@@ -35,12 +36,13 @@ export const Nav= styled.ul`
 `
 export const NavBar= styled.ul`
     width:100%;
-    margin-top:5%;
-    /* margin-left:-50%; */
     @media(max-width:480px){
-    width: 472%;
-    height: 100%;
-
+        width: 472%;
+        height: 100%;
+        display:block;
     }
+    /* :hover{
+        background-color:rebeccapurple;
+    } */
 `
 
