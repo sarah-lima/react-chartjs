@@ -23,7 +23,7 @@ export const Title= styled.h1`
 `
 export const Nav= styled.ul`
     width:100%;
-    display:inline-block;
+    display: initial;
     margin-left: 4%;
     margin-top: -5px; 
     @media(max-width:480px){
