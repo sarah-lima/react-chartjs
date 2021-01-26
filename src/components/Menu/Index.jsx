@@ -8,7 +8,7 @@ export default function Menu(){
     const [navOpen, setnavOpen] = useState(false)
     const [hoverone, setHover] = useState(false)
     const [hovertwo, setHoverTwo] = useState(false)
-    const [liOpen, setLiOpens] = useState(false)
+
     var linkStyle='';
     var styleLink='';
     var styleLi='';
@@ -28,8 +28,9 @@ export default function Menu(){
     }
 
     //div >ul
-    if(navOpen && (window.innerWidth<=480)){
-        liStyle = {
+    if(navOpen){
+        if( window.innerWidth<=480 ){
+            liStyle = {
             paddingTop: '20%',
             backgroundColor: '#f5f',
             margin: 'auto',
@@ -38,12 +39,22 @@ export default function Menu(){
             margintop: '11%',
             height: '92.5%',
             marginTop: '11%',
-            width: '100%',
-            
+            width: '100%',               
         }
-        console.log("deu certo")
+        
         svg='50';
-    }else{
+        }
+            liStyle = {       
+            margin:'10px',
+            width:'auto',
+            height:'100%',
+            marginLeft:'20px',
+            display: 'inline-flex', 
+            }
+            svg='30';
+            console.log("deu certo")
+        }
+    else{
         styleLi={
             margin:'10px',
             width:'auto',
@@ -62,7 +73,7 @@ export default function Menu(){
                             <>
                             <S.Div style={liStyle}>
                                 <S.Nav>
-                                    <GrClose style={{cursor:'pointer'}} size={svg} onClick={()=>setnavOpen(!navOpen)} />
+                                    <GrClose style={{cursor:'pointer', marginTop:'5px'}} size={svg} onClick={()=>setnavOpen(!navOpen)} />
                                 </S.Nav>
                                     <S.NavBar>
                                     <Link to='' style={linkStyle} onMouseOver={()=>setHover(!hoverone)} onMouseOut={()=>setHover(!hoverone)}>TESTE</Link>
@@ -73,7 +84,7 @@ export default function Menu(){
                             :
                             <S.Div style={styleLi,{backgroundColor: liStyle.backgroundColor}}>
                             <S.Nav>
-                                <GiHamburgerMenu style={{cursor:'pointer'}} size={svg} onClick={()=>setnavOpen(!navOpen)} />
+                                <GiHamburgerMenu style={{cursor:'pointer', marginTop:'5px'}} size={svg} onClick={()=>setnavOpen(!navOpen)} />
                             </S.Nav>
                             </S.Div>
                     }
