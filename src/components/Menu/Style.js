@@ -35,6 +35,7 @@ export const Nav= styled.ul`
 `
 export const NavBar= styled.ul`
     width:100%;
+    font-size: 20px;
     @media(max-width:480px){
         width: 100%;
         height: 90%;

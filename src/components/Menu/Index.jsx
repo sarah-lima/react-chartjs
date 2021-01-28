@@ -29,30 +29,29 @@ export default function Menu(){
 
     //div >ul
     if(navOpen){
-        if( window.innerWidth<=480 ){
+        if( window.innerWidth <= 480 ){
             liStyle = {
-            paddingTop: '20%',
-            backgroundColor: '#f5f',
-            margin: 'auto',
-            position: 'absolute',
-            display: 'block',
-            margintop: '11%',
-            height: '92.5%',
-            marginTop: '11%',
-            width: '100%',               
+                backgroundColor: 'crimson',
+                width: 'auto',
+                height: '91vh',
+                display: 'block',
+                marginTop: '9vh',
+                textAlign: 'center',              
         }
         
         svg='50';
-        }
+        }else{
             liStyle = {       
-            margin:'10px',
-            width:'auto',
-            height:'100%',
-            marginLeft:'20px',
-            display: 'inline-flex', 
+                width: 'auto',
+                height: '100%',
+                display: 'inline-flex',
+                marginLeft: '4%',
+                marginTop: '5px',
             }
             svg='30';
             console.log("deu certo")
+        }
+            
         }
     else{
         styleLi={
