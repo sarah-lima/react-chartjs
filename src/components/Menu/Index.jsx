@@ -76,7 +76,7 @@ export default function Menu(){
                                 </S.Nav>
                                     <S.NavBar>
                                     <Link to='' style={linkStyle} onMouseOver={()=>setHover(!hoverone)} onMouseOut={()=>setHover(!hoverone)}>TESTE</Link>
-                                    <Link to='' style={styleLink} onMouseOver={()=>setHoverTwo(!hovertwo)} onMouseOut={()=>setHoverTwo(!hovertwo)}>Login</Link>        
+                                    <Link to='/login' style={styleLink} onMouseOver={()=>setHoverTwo(!hovertwo)} onMouseOut={()=>setHoverTwo(!hovertwo)}>Login</Link>        
                                     </S.NavBar>
                             </S.Div>
                             </>
