@@ -1,16 +1,57 @@
-import React, {useState} from 'react';
-import * as S from './Style.js';
+import React, { useEffect, useState } from 'react';
+import { Div } from './Style.js';
+import { Bar, Line, Bubble, Doughnut, Pie } from 'react-chartjs-2';
 import Menu from '../../components/Menu/Index'
 
 export default function Home() {
-    return(
+    const [chartData, setChartData] = useState({})
+
+    const chart = () => {
+        setChartData({
+            labels: ['segunda', 'terça', 'quarta', 'quinta', 'sexta'],
+            datasets: [
+                {
+                    label: 'Saídas',
+                    data: [32, 42, 23, 56, 78],
+                    fill: true,
+                    lineTension: 0.2,
+                    backgroundColor: '#3E517A',
+                    pointRadius: 2,
+                    borderColor: '#3E517A',
+                    borderWidth: 1,
+                }, {
+                    label: 'Metas',
+                    data: [78, 23, 42, 32, 56],
+                    fill: true,
+                    backgroundColor: '#DDCDB5',
+                    pointRadius: 2,
+                    borderColor: '#DDCDB5',
+                    borderWidth: 1,
+                    lineTension: 0.2
+                }
+            ]
+        })
+    }
+
+    useEffect(() => {
+        chart();
+    }, [])
+    return (
         <>
-        <Menu style={{zIndex:1}} />
-       
-           
-        <S.Div style={{zIndex:-1}}>
-            <img style={{height:'93vh'}} src="https://conteudo.imguol.com.br/c/noticias/f1/2019/11/02/a-nasa-elegeu-como-foto-astronomica-do-dia-em-22-de-outubro-esta-imagem-da-via-lactea-capturada-por-jheison-huerta-no-salar-de-uyuni-na-bolivia-1572723035380_v2_976x549.jpg" alt=""/>
-        </S.Div>
+            <Menu />
+            <Div>
+                <div style={{ width: '50%' }}>
+                    <Line data={chartData} />
+                    <Bar data={chartData} />
+                </div>
+                <div style={{ width: '50%' }}>
+                    <Doughnut width='50px' data={chartData} />
+                    <Pie data={chartData} />
+                </div>
+            </Div>
+            <Div>
+                <Bubble data={chartData} />
+            </Div>
         </>
     )
 }
