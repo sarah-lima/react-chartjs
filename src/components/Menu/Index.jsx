@@ -1,12 +1,15 @@
+import { RiDashboard3Line } from 'react-icons/ri';
 import React from 'react';
-import * as S from './Style';
+import {Container, Title} from './Style';
 
 export default function Menu() {
     return (
         <>
-            <S.Container>
-                <S.Title>React Chart Examples</S.Title>
-            </S.Container>
+            <Container>
+                <RiDashboard3Line size={40}/>
+                <Title>React Chart Examples</Title>
+                <div></div>
+            </Container>
         </>
     )
 }
