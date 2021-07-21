@@ -5,15 +5,19 @@ import Menu from '../../components/Menu/Index'
 
 export default function Home() {
     const [chartData, setChartData] = useState({})
+    const [chartDataLine, setChartDataLine] = useState({})
     var valor =[]
+    var valorDois = []
     const random = () =>{
         if(valor.length>1){
             for (var e=0; e<7;e++){
                 valor.pop()
+                valorDois.pop()
             }
         }
         for (var i=0; i<7;i++){
             valor.push(Math.floor(Math.random()*10))
+            valorDois.push(Math.floor(Math.random()*10))
         }
         console.log(valor)
     }
@@ -26,7 +30,7 @@ export default function Home() {
                     data: valor,
                     fill: true,
                     lineTension: 0.2,
-                    backgroundColor: ['#17BEBB', '#2E282A', '#CD5334', '#EDB88B', '#FAD8D6','#FAD8A5', '#2E102F'],
+                    backgroundColor: ['#7A5E68', '#352e30', '#FAD8D6', '#29281b','#64767A', '#232C2E', '#76a1ac'],
                     pointRadius: 2,
                     borderRadius: 5,
                     borderColor: '#fff',
@@ -35,11 +39,39 @@ export default function Home() {
             ]
         })
     }
+    const chartLine = () => {
+        setChartDataLine({
+            labels: ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'],
+            datasets: [
+                {
+                    label: 'Texto',
+                    data: valor,
+                    fill: false,
+                    lineTension: 0.2,
+                    pointRadius: 2,
+                    borderRadius: 5,
+                    borderColor: '#7A5E68',
+                    borderWidth: 1,
+                },
+                {
+                    label: 'Texto 2',
+                    data: valorDois,
+                    fill: false,
+                    lineTension: 0.2,
+                    pointRadius: 2,
+                    borderRadius: 5,
+                    borderColor: '#64767A',
+                    borderWidth: 1,
+                },
+            ]
+        })
+    }
 
     useEffect(() => {
         setInterval(()=>{
             random();
             chart();
+            chartLine();
         }, 10000)
     }, [])
 
@@ -49,7 +81,7 @@ export default function Home() {
             <Menu />
             <Div style={{ marginLeft: '-25%'}}>
                 <div style={{ width: '50%', display: 'flex' }}>
-                    <Line data={chartData} />
+                    <Line data={chartDataLine} />
                     <Bar data={chartData} />
                 </div>
 
